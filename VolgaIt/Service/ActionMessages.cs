@@ -25,5 +25,6 @@
         public static string Hesoyam() => "+250 000";
         public static string RentUpdated() => "Rent updated.";
         public static string RentDeleted() => "Rent deleted";
+        public static string YouTranportOwner() => "You are owner of thi transport.";
     }
 }

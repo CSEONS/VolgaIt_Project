@@ -40,6 +40,9 @@ namespace VolgaIt.MediatR.RentCommands.BeginCommands
             if (user is null)
                 return new BadRequestObjectResult(new { error = ActionMessages.UserNotFound() });
 
+            if (transport.OwnerId == user.Id)
+                return new BadRequestObjectResult(new { error = ActionMessages.YouTranportOwner() });
+
             Rent rent = new Rent()
             {
                 Id = Guid.NewGuid().ToString(),
