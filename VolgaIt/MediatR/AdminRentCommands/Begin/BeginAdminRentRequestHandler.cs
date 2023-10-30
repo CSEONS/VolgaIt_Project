@@ -52,6 +52,10 @@ namespace VolgaIt.MediatR.AdminRentCommands.Begin
                 RentType = request.PriceType,
             };
 
+            transport.IsRented = false;
+            _dataManager.Transports.Update(transport);
+            await _dataManager.Transports.SaveChangesAsyn();
+
             await _dataManager.Rents.AddAsync(rent);
             await _dataManager.Rents.SaveChangesAsync();
 

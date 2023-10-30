@@ -32,6 +32,10 @@ namespace VolgaIt.MediatR.PaymentCommands.Hesoyam
                 user.Balance += 250000;
                 await _userManager.UpdateAsync(user);
             }
+            else
+            {
+                return new BadRequestObjectResult(new { error = ActionMessages.YouNotOwner() });
+            }
 
             return new OkObjectResult(new { message = ActionMessages.Hesoyam() });
         }

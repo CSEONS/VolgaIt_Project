@@ -6,6 +6,7 @@ namespace VolgaIt.Domain.Entities
     {
         public string Id { get; set; }
         public bool CanBeRented { get; set; }
+        public bool IsRented { get; set; }
         public string Model { get; set; }
         public string Color { get; set; }
         public string Identifier { get; set; }

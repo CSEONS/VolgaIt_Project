@@ -32,7 +32,7 @@ namespace VolgaIt.MediatR.RentCommands.BeginCommands
             if (transport is null)
                 return new BadRequestObjectResult(new { error = ActionMessages.TransportNotFound() });
 
-            if (transport.CanBeRented)
+            if (transport.IsRented)
                 return new BadRequestObjectResult(new { error = ActionMessages.TransportRented() });
 
             var user = await _userManager.GetUserAsync(request.User);
@@ -50,6 +50,8 @@ namespace VolgaIt.MediatR.RentCommands.BeginCommands
                 PriceOfUnit = request.Type == "DAYS" ? (double)transport.DayPrice : (double)transport.MinutePrice
             };
 
+
+            transport.IsRented = true;
             _dataManager.Transports.Update(transport);
             await _dataManager.Transports.SaveChangesAsyn();
 

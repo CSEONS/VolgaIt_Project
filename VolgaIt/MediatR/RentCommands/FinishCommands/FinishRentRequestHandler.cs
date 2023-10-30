@@ -32,7 +32,7 @@ namespace VolgaIt.MediatR.RentCommands.FinishCommands
 
             transport.Latitude = (double)request.Lat;
             transport.Longitude = (double)request.Longitude;
-            transport.CanBeRented = true;
+            transport.IsRented = false;
 
             _dataManager.Transports.Update(transport);
             await _dataManager.Transports.SaveChangesAsyn();

@@ -21,7 +21,7 @@
         public static string RentNotFound() => "Rent not found.";
         public static string AccesDined() => "Access denied.";
         public static string UnknownRentType() => "Unknown rent type";
-        public static string TransportRented() => "Transport rented";
+        public static string TransportRented() => "Transport rented by another user.";
         public static string Hesoyam() => "+250 000";
         public static string RentUpdated() => "Rent updated.";
         public static string RentDeleted() => "Rent deleted";
