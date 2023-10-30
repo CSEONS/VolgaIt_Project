@@ -22,7 +22,9 @@ namespace VolgaIt.MediatR.AdminRentCommands.Delete
                 return new BadRequestObjectResult(new { error = ActionMessages.RentNotFound() });
 
             _dataManager.Rents.Delte(rent);
-            return new BadRequestObjectResult(new { message = ActionMessages.RentDeleted() });
+            await _dataManager.Rents.SaveChangesAsync();
+
+            return new OkObjectResult(new { message = ActionMessages.RentDeleted() });
         }
     }
 }

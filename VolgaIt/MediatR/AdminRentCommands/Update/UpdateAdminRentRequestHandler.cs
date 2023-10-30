@@ -33,8 +33,7 @@ namespace VolgaIt.MediatR.AdminRentCommands.Update
             if (request.PriceOfUnit < 0)
                 return new BadRequestObjectResult(new { error = ActionMessages.ParametrsMustGreaterZero(nameof(request.PriceOfUnit)) });
 
-            rent = _mapper.Map<UpdateAdminRentRequest, Rent>(request);
-            rent.Id = request.RentId;
+            var rentMap = _mapper.Map<UpdateAdminRentRequest, Rent>(request);
 
             _dataManager.Rents.Update(rent);
             await _dataManager.Rents.SaveChangesAsync();
