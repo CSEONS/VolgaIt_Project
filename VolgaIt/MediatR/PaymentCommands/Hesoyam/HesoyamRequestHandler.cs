@@ -21,6 +21,9 @@ namespace VolgaIt.MediatR.PaymentCommands.Hesoyam
         {
             var user = await _userManager.GetUserAsync(request.User);
 
+            if (user is null)
+                return new BadRequestObjectResult(new { error = ActionMessages.UserNotFound() });
+
             if(await _userManager.IsInRoleAsync(user, "Admin"))
             {
                 user = await _userManager.FindByIdAsync(request.AccountId);

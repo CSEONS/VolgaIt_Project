@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using VolgaIt.MediatR.PaymentCommands.Hesoyam;
 
@@ -6,11 +7,12 @@ namespace VolgaIt.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PaymenController : ControllerBase
+    [Authorize]
+    public class PaymentController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public PaymenController(IMediator mediator)
+        public PaymentController(IMediator mediator)
         {
             _mediator = mediator;
         }
