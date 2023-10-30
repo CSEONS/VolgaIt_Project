@@ -79,7 +79,7 @@ namespace VolgaIt.Area.Admin
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateRent(string id, UpdateAdminRentRequest request, CancellationToken cancellationToken)
         {
-            request.RentId = id;
+            request.Id = id;
 
             return await _mediator.Send(request, cancellationToken);
         }

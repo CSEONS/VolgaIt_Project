@@ -7,8 +7,9 @@ namespace VolgaIt.MediatR.AdminRentCommands.Update
     public class UpdateAdminRentRequest : IRequest<IActionResult>
     {
         [JsonIgnore]
-        public string? RentId { get; set; }
+        public string? Id { get; set; }
         public string UserId { get; set; }
+        public string TransportId { get; set; }
         public string PriceType { get; set; }
         public DateTime TimeStart { get; set; }
         public DateTime? TimeEnd { get; set; }
