@@ -44,22 +44,30 @@ namespace VolgaIt.MediatR.AccountCommands.Register
                 UserName = request.Username
             };
 
+            object error = new object();
+
             try
             {
                 var createingUserResult = await _userManager.CreateAsync(registeringUser);
                 if (createingUserResult.Succeeded is false)
-                    throw new Exception(JsonSerializer.Serialize(createingUserResult));
+                {
+                    error = createingUserResult;
+                    throw new Exception();
+                }
 
                 var setPasswordResult = await _userManager.AddPasswordAsync(registeringUser, request.Password);
                 if (setPasswordResult.Succeeded is false)
-                    throw new Exception(JsonSerializer.Serialize(setPasswordResult));
+                {
+                    error = setPasswordResult;
+                    throw new Exception();
+                }
 
                 await _databaseService.CommitAsync();
             }
             catch (Exception ex)
             {
                 await _databaseService.RollbackAsync();
-                return new BadRequestObjectResult(new { error = ex.Message });
+                return new BadRequestObjectResult(error);
             }
 
 

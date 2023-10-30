@@ -58,10 +58,13 @@ namespace VolgaIt.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromRoute] string id, DeleteTransportRequest request, CancellationToken cancellationToken)
+        public async Task<IActionResult> Delete([FromRoute] string id, CancellationToken cancellationToken)
         {
-            request.From = User;
-            request.TransportId = id;
+            DeleteTransportRequest request = new DeleteTransportRequest()
+            {
+                From = User,
+                TransportId = id,
+            };
             
             return await _mediator.Send(request, cancellationToken);
         }

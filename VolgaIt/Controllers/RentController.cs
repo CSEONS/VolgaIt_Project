@@ -43,9 +43,12 @@ namespace VolgaIt.Controllers
 
         [HttpGet("MyHistory")]
         [Authorize]
-        public async Task<IActionResult> Create(MyRentHistoryRequest request, CancellationToken cancellationToken)
+        public async Task<IActionResult> MyHistory(CancellationToken cancellationToken)
         {
-            request.User = User;
+            MyRentHistoryRequest request = new MyRentHistoryRequest()
+            {
+                User = User
+            };
 
             return await _mediator.Send(request, cancellationToken);
         }
