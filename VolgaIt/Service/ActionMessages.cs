@@ -25,6 +25,7 @@
         public static string Hesoyam() => "+250 000";
         public static string RentUpdated() => "Rent updated.";
         public static string RentDeleted() => "Rent deleted";
-        public static string YouTranportOwner() => "You are owner of thi transport.";
+        public static string YouTranportOwner() => "You are owner of this transport.";
+        public static string RentEnError() => "Rent alredy ended.";
     }
 }

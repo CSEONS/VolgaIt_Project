@@ -76,6 +76,7 @@ namespace VolgaIt.Controllers
 
             return await _mediator.Send(request, cancellationToken);
         }
+
         [HttpGet("TransportHistory/{transportId}")]
         public async Task<IActionResult> GetTransportHistory(string transportId, CancellationToken cancellationToken)
         {

@@ -21,12 +21,12 @@
 
         public double CalculateFinalPrice()
         {
-            TimeSpan span = (EndTime - StartTime).Value;
+            var span = (EndTime - StartTime);
 
-            if (RentType == RentTypes[Entities.RentType.Minutes])
-                return span.Minutes * PriceOfUnit;
+            if (RentType.ToUpper() == RentTypes[Entities.RentType.Minutes])
+                return span.Value.TotalMinutes * PriceOfUnit;
             else
-                return span.Days * PriceOfUnit;
+                return span.Value.TotalDays * PriceOfUnit;
         }
     }
 

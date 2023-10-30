@@ -28,6 +28,9 @@ namespace VolgaIt.MediatR.RentCommands.FinishCommands
             if (rent is null)
                 return new BadRequestObjectResult(new { error = ActionMessages.RentNotFound() });
 
+            if (rent.EndTime is not null)
+                return new BadRequestObjectResult(new { error = ActionMessages.RentEnError() });
+
             var transport = _dataManager.Transports.GetById(rent.TransportId);
 
             transport.Latitude = (double)request.Lat;
@@ -41,6 +44,7 @@ namespace VolgaIt.MediatR.RentCommands.FinishCommands
             rent.FinalPrice = rent.CalculateFinalPrice();
 
             _dataManager.Rents.Update(rent);
+
             await _dataManager.Rents.SaveChangesAsync();
 
             var rentViewModel = _mapper.Map<Rent, RentViewModel>(rent);

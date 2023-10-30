@@ -34,6 +34,7 @@ namespace VolgaIt.MediatR.AdminRentCommands.Update
                 return new BadRequestObjectResult(new { error = ActionMessages.ParametrsMustGreaterZero(nameof(request.PriceOfUnit)) });
 
             rent = _mapper.Map<UpdateAdminRentRequest, Rent>(request);
+            rent.Id = request.RentId;
 
             _dataManager.Rents.Update(rent);
             await _dataManager.Rents.SaveChangesAsync();

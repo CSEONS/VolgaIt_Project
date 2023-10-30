@@ -35,7 +35,7 @@ namespace VolgaIt.Area.Admin
             return await _mediator.Send(request, cancellationToken);
         }
 
-        [HttpGet("UseHistory/{userId}")]
+        [HttpGet("UserHistory/{userId}")]
         public async Task<IActionResult> GetUserHistory(string userId, CancellationToken cancellationToken)
         {
             GetAdminUserHistoryRequest request = new GetAdminUserHistoryRequest()
@@ -80,14 +80,6 @@ namespace VolgaIt.Area.Admin
         public async Task<IActionResult> UpdateRent(string id, UpdateAdminRentRequest request, CancellationToken cancellationToken)
         {
             request.RentId = id;
-
-            return await _mediator.Send(request, cancellationToken);
-        }
-
-        [HttpPut("{rentId}")]
-        public async Task<IActionResult> UpdateRent(UpdateAdminRentRequest request, CancellationToken cancellationToken)
-        {
-            request.RentId = request.RentId;
 
             return await _mediator.Send(request, cancellationToken);
         }
