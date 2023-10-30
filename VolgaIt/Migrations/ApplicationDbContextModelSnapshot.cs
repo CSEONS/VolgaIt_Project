@@ -50,7 +50,7 @@ namespace VolgaIt.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "4024bdec-a5d7-41d0-a773-ff02f31f629f",
+                            Id = "885c39db-1e52-45eb-8d07-d185bd722ac3",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -145,8 +145,8 @@ namespace VolgaIt.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "adc905c2-1ae3-417f-a4aa-d913dd5f284c",
-                            RoleId = "4024bdec-a5d7-41d0-a773-ff02f31f629f"
+                            UserId = "aadde235-b1ee-4f35-a797-f67a908e405a",
+                            RoleId = "885c39db-1e52-45eb-8d07-d185bd722ac3"
                         });
                 });
 
@@ -244,16 +244,16 @@ namespace VolgaIt.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "adc905c2-1ae3-417f-a4aa-d913dd5f284c",
+                            Id = "aadde235-b1ee-4f35-a797-f67a908e405a",
                             AccessFailedCount = 0,
                             Balance = 0.0,
-                            ConcurrencyStamp = "73177d28-2ac2-4edd-8d2b-54feb6c648dd",
+                            ConcurrencyStamp = "beb0f2e3-127c-41e7-962b-c93876eed204",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFm5t6NGoHXuAJLGSX6XNOE/0CPeA713wEO37Tnv/YdORIoCGGZZf3zLInrgeschWg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEA12szU8S/bTKcyoJ/5cQUYaSj6zQVSEdThQsfL/6DqhbRBSN9WUNKMBTLF3f/OjNw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "de974771-ddbe-4e6a-bf36-368d3f887c1b",
+                            SecurityStamp = "6ea79279-34be-41c5-be50-a7e6e01ac488",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -317,6 +317,9 @@ namespace VolgaIt.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("IsRented")
+                        .HasColumnType("boolean");
+
                     b.Property<double>("Latitude")
                         .HasColumnType("double precision");
 
@@ -365,19 +368,19 @@ namespace VolgaIt.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ed468c0f-e890-4534-ab37-22a991b2fd0d",
+                            Id = "74857f35-fcf9-4773-9dbd-c114a843e2a3",
                             Name = "Car",
                             NormalizedName = "CAR"
                         },
                         new
                         {
-                            Id = "f683025f-9ff1-402b-b81d-4bd254dc5805",
+                            Id = "c61d2cae-edfe-4a34-be18-49010a94e058",
                             Name = "Bike",
                             NormalizedName = "BIKE"
                         },
                         new
                         {
-                            Id = "5b9c7e44-b8b9-4f3b-940c-320e7565e4a1",
+                            Id = "6ce84a04-6ea5-42fa-af6d-528e7c0edda7",
                             Name = "Scooter",
                             NormalizedName = "SCOOTER"
                         });

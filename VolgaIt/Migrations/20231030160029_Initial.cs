@@ -181,6 +181,7 @@ namespace VolgaIt.Migrations
                 {
                     Id = table.Column<string>(type: "text", nullable: false),
                     CanBeRented = table.Column<bool>(type: "boolean", nullable: false),
+                    IsRented = table.Column<bool>(type: "boolean", nullable: false),
                     Model = table.Column<string>(type: "text", nullable: false),
                     Color = table.Column<string>(type: "text", nullable: false),
                     Identifier = table.Column<string>(type: "text", nullable: false),
@@ -238,27 +239,27 @@ namespace VolgaIt.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "4024bdec-a5d7-41d0-a773-ff02f31f629f", null, "Admin", "ADMIN" });
+                values: new object[] { "885c39db-1e52-45eb-8d07-d185bd722ac3", null, "Admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccesToken", "AccessFailedCount", "Balance", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "RefreshToken", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "adc905c2-1ae3-417f-a4aa-d913dd5f284c", null, 0, 0.0, "73177d28-2ac2-4edd-8d2b-54feb6c648dd", null, false, false, null, null, "ADMIN", "AQAAAAIAAYagAAAAEFm5t6NGoHXuAJLGSX6XNOE/0CPeA713wEO37Tnv/YdORIoCGGZZf3zLInrgeschWg==", null, false, null, "de974771-ddbe-4e6a-bf36-368d3f887c1b", false, "Admin" });
+                values: new object[] { "aadde235-b1ee-4f35-a797-f67a908e405a", null, 0, 0.0, "beb0f2e3-127c-41e7-962b-c93876eed204", null, false, false, null, null, "ADMIN", "AQAAAAIAAYagAAAAEA12szU8S/bTKcyoJ/5cQUYaSj6zQVSEdThQsfL/6DqhbRBSN9WUNKMBTLF3f/OjNw==", null, false, null, "6ea79279-34be-41c5-be50-a7e6e01ac488", false, "Admin" });
 
             migrationBuilder.InsertData(
                 table: "TransportTypes",
                 columns: new[] { "Id", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "5b9c7e44-b8b9-4f3b-940c-320e7565e4a1", "Scooter", "SCOOTER" },
-                    { "ed468c0f-e890-4534-ab37-22a991b2fd0d", "Car", "CAR" },
-                    { "f683025f-9ff1-402b-b81d-4bd254dc5805", "Bike", "BIKE" }
+                    { "6ce84a04-6ea5-42fa-af6d-528e7c0edda7", "Scooter", "SCOOTER" },
+                    { "74857f35-fcf9-4773-9dbd-c114a843e2a3", "Car", "CAR" },
+                    { "c61d2cae-edfe-4a34-be18-49010a94e058", "Bike", "BIKE" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "4024bdec-a5d7-41d0-a773-ff02f31f629f", "adc905c2-1ae3-417f-a4aa-d913dd5f284c" });
+                values: new object[] { "885c39db-1e52-45eb-8d07-d185bd722ac3", "aadde235-b1ee-4f35-a797-f67a908e405a" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
