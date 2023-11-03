@@ -11,3 +11,6 @@
 4. Открыть файл `appsettings.json` и изменить данные `ConnectionString` под свои.
 
 5. Выполнить команду `dotnet-ef database drop` для удаления базы данных (если она существует), затем выполнить команду `dotnet-ef database update`.
+
+6. По пути '/swagger/index'
+html находится swagger.
