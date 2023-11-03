@@ -12,5 +12,4 @@
 
 5. Выполнить команду `dotnet-ef database drop` для удаления базы данных (если она существует), затем выполнить команду `dotnet-ef database update`.
 
-6. По пути '/swagger/index'
-html находится swagger.
+6. По пути '/swagger/index.html' находится swagger.
